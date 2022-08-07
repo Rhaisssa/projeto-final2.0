@@ -27,6 +27,7 @@
 }
 */
 
+/*
 * {
     padding: 0;
     margin: 0
@@ -55,3 +56,23 @@
 }
 
 
+*/
+@import url(//db.onlinewebfonts.com/c/7200c6dd8ac604abe09f5159e53a40c0?family=Mark+Pro);
+
+.login,
+.image {
+  min-height: 100vh;
+  background: #222222;
+  box-shadow: 4px 4px 70px rgba(0, 0, 0, 0.25);
+}
+.bg-image {
+  background-image: url("../../assets/home.png");
+  background-size: cover;
+  background-position: center center;
+
+}
+
+.text,
+.display-4{
+  color: #FFFFFF;
+}

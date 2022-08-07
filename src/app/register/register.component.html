@@ -1,20 +1,22 @@
+<!-------------
+
 <div class="page">
-  <!--Login & Signup in single row-->
+  <!--Login & Signup in single row--
   <div class="row">
-    <!--Column for signin-->
+    <!--Column for signin--
     <div class="col col-sm-6 col-md-6 right-side text-center signin">
-      <!-- Default form login -->
+      <!-- Default form login --
       <form action="#!">
         <p class="h1 text-center olatext top">Olá,</p>
         <p class="h4 text-center signintext top">
           Para continuar navegando de forma segura, efetue o login na rede.
         </p>
         <p class="text-center">Login</p>
-        <!-- Email -->
+        <!-- Email --
         <input type="email" class="form-control" placeholder="Usuário" />
-        <!-- Password -->
+        <!-- Password --
         <input type="password" class="form-control" placeholder="Senha" />
-        <!-- Sign in button -->
+        <!-- Sign in button --
         <button class="btn btn-primary btn-danger" type="submit">
           Continuar
         </button>
@@ -23,7 +25,7 @@
         >
       </form>
     </div>
-    <!--Column for image-->
+    <!--Column for image--
     <div class="hide-on-small-only">
 
     <div class="col-md-6 img-fluid">
@@ -32,6 +34,64 @@
       />
     </div>
     </div>
+    </div>
+  </div>
+-------------->
+
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="col-md-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-10 col-xl-7 mx-auto">
+                <h3 class="display-4">Olá,</h3>
+                <p class="text mb-4">
+                  Para continuar navegando de forma segura, efetue o login na rede.
+                </p>
+                <form>
+                  <div class="form-group mb-3">
+                    <input
+                      id="inputEmail"
+                      type="email"
+                      placeholder="Usuário"
+                      required=""
+                      autofocus=""
+                      class="form-control rounded-pill border-0 shadow-sm px-4"
+                    />
+                  </div>
+                  <div class="form-group mb-3">
+                    <input
+                      id="inputPassword"
+                      type="password"
+                      placeholder="Senha"
+                      required=""
+                      class="form-control rounded-pill border-0 shadow-sm px-4 text-primary"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-block mb-2 rounded-pill shadow-sm"
+                  >
+                    Continue
+                  </button>
+                  <div class="text-center d-flex justify-content-between mt-4">
+                    <p class="text">
+                      Não é cadastrado ainda? Cadastre-se
+                      <a href="#" class="font-italic text-muted">
+                        <u>aqui</u></a
+                      >
+                    </p>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 d-none d-md-flex bg-image"></div>
     </div>
   </div>
 
