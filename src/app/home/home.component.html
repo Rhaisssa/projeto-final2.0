@@ -1,1 +1,45 @@
-<p>home works!</p>
+<div class="container-fluid">
+  <div class="row no-gutter">
+  <app-weather></app-weather>
+    <div class="col-md-6 d-none d-md-flex bg-image no-gutters"></div>
+
+    <div class="col-md-6 no-gutters">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-xl-7 mx-auto">
+              <h2 class="middle">Our Mission is</h2>
+              <p class="smaller">Nossa missão é</p>
+
+              <h1 class="bigger">To transform the world</h1>
+              <p class="smaller">transformar o mundo</p>
+
+              <h1 class="bigger">building digital experiences</h1>
+              <p class="smaller">construindo experiências digitais</p>
+
+              <h1 class="bigger">that enable our client's growth</h1>
+              <p class="smaller">
+                que permitam o crescimento dos nossos clientes
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p class="text">
+        Essa janela do navegador é usada para manter sua sessão de autenticação
+        ativa. Deixe-a aberta em segundo plano e abra uma nova janela pra
+        continuar a navegar.
+      </p>
+      <div class="flex timer">
+        <p class="timer">Application refresh in</p>
+        <button class="next-button" (click)="goGoogle()">
+          Continuar<br />Navegando
+        </button>
+
+        <button class="logout-button" (click)="logout()">Logout</button>
+      </div>
+    </footer>
+  </div>
+</div>

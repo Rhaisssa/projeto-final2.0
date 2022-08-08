@@ -1,0 +1,8 @@
+<div *ngIf="weatherNow">
+  <div class="time">{{ currentTime | date: "HH:mm" }}</div>
+  <div class="location">{{ location.name }} {{ location.country }}</div>
+  <div class="temp">
+    <h3>{{ weatherNow.main.temp | number: "1.0-0" }}°C</h3>
+  </div>
+</div>
+

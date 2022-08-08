@@ -1,34 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { SignInData } from '../model/signInData';
+import { NgForm } from '@angular/forms';
+import { AuthenticationService } from '../Service/authentication.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'cf-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup | any;
-  title = 'material-login';
-  constructor(
-    private router:Router
-  ) {
-    this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email,Validators.pattern(
-        '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,63}$',
-      ),]),
-      password: new FormControl('', [Validators.required,Validators.pattern(
-        '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$'
-      )])
-    });
-   }
-  ngOnInit(): void {
-  }
-  onSubmit(){
-    if(!this.loginForm.valid){
+
+  formValid = false;
+  credentialsInvalid = false;
+
+  constructor(public authenticationService: AuthenticationService) {}
+
+  ngOnInit() {}
+
+  onSubmit(signInForm: NgForm) {
+    console.log(signInForm.value);
+
+    if (!signInForm.valid) {
+      this.formValid = true;
+      this.credentialsInvalid = false;
       return;
     }
-    localStorage.setItem('user',this.loginForm.value)
-    this.router.navigate(['/home'])
+    this.verifyCredentials(signInForm);
+  }
+
+  private verifyCredentials(signInForm: NgForm) {
+    const signInData = new SignInData(
+      signInForm.value.usuario,
+      signInForm.value.senha
+    );
+
+    if (!this.authenticationService.authenticate(signInData)) {
+      this.formValid = false;
+      this.credentialsInvalid = true;
+    }
   }
 }

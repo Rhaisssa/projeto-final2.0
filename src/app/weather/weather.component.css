@@ -1,0 +1,44 @@
+.time {
+  position: absolute;
+  width: 327px;
+  height: 146px;
+  left: 796px;
+  top: 0px;
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 144px;
+  line-height: 183px;
+  text-align: center;
+  color: #222222;
+}
+
+.location {
+  position: absolute;
+  width: 119px;
+  height: 18px;
+  left: 92%;
+  top: 25px;
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: right;
+  color: #222222;
+}
+
+.temp {
+  position: absolute;
+  width: 75px;
+  height: 61px;
+  left: 95%;
+  top: 42px;
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 61px;
+  text-align: right;
+  color: #222222;
+}

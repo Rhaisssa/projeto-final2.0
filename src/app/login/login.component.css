@@ -12,16 +12,14 @@
   background-position: center center;
 }
 
-.text,
-.display-4 {
+.text {
   color: #ffffff;
 }
 
 .ola {
-  width: 118px;
-  height: 76px;
+  width: 80%;
+  height: 15%;
   left: 0%;
-  bottom: 350%;
   font-family: "Mark Pro";
   font-style: normal;
   font-weight: 400;
@@ -30,20 +28,22 @@
   color: #e0e0e0;
 }
 
-.text-information {
-  width: 301px;
-  height: 52px;
+.display-6 {
+  width: 80%;
+  height: 12%;
   bottom: 250%;
+  margin-bottom: 12%;
   font-family: "Mark Pro";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   color: #e0e0e0;
 }
 
 .text-login {
   height: 38px;
+  margin-bottom: 5%;
   font-family: "Mark Pro";
   font-style: normal;
   font-weight: 400;
@@ -54,22 +54,78 @@
 
 .usuario {
   box-sizing: border-box;
-  height: 60px;
+  margin-top: 5%;
+  width: 75%;
+  height: 50px;
   background: #26292c;
   border: 1px solid #ffffff;
+  border-radius: 50px;
+  border: 1px solid #FFFFFF;
+}
+.usuario::placeholder,
+.senha::placeholder {
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  color: #e0e0e0;
 }
 
 .senha {
   box-sizing: border-box;
-  height: 60px;
+  margin-top: 5%;
+  width: 75%;
+  height: 50px;
   background: #26292c;
-  border: 1px solid #ffffff;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
 }
 
 .continuar {
-  margin-top: 10%;
-  height: 67px;
+  margin-top: 15%;
+  width: 75%;
+  height: 55px;
   background: linear-gradient(90deg, #ff2d04 0%, #c13216 100%);
   box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
+}
 
+.continuar {
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.aqui,
+.text {
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.logo {
+  position: flex;
+  margin-right: 15%;
+  margin-left: 20%;
+  margin-bottom: 20%;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+}
+
+@media (max-width: 2000px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
 }

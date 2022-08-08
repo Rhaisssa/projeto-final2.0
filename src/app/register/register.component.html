@@ -1,97 +1,75 @@
-<!-------------
 
-<div class="page">
-  <!--Login & Signup in single row--
-  <div class="row">
-    <!--Column for signin--
-    <div class="col col-sm-6 col-md-6 right-side text-center signin">
-      <!-- Default form login --
-      <form action="#!">
-        <p class="h1 text-center olatext top">Olá,</p>
-        <p class="h4 text-center signintext top">
-          Para continuar navegando de forma segura, efetue o login na rede.
-        </p>
-        <p class="text-center">Login</p>
-        <!-- Email --
-        <input type="email" class="form-control" placeholder="Usuário" />
-        <!-- Password --
-        <input type="password" class="form-control" placeholder="Senha" />
-        <!-- Sign in button --
-        <button class="btn btn-primary btn-danger" type="submit">
-          Continuar
-        </button>
-        <a class="register" href="[./register"
-          >Ainda não é usuário? Se registre <span>aqui</span>.</a
-        >
-      </form>
-    </div>
-    <!--Column for image--
-    <div class="hide-on-small-only">
+<div class="container-fluid no-gutters">
+  <div class="row no-gutters">
+    <div class="col-md-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <span class="logo ">
+            <img src="./assets\logoCompasso1.png" class="img-fluid"/>
+          </span>
+          <div class="row">
+            <div class="col-lg-10 col-xl-7 mx-auto">
+              <h1 class="ola">Olá,</h1>
+              <p class="display-6">
+                Cadastre um e-mail e uma senha válidos para efetuar o login na
+                rede.
+              </p>
 
-    <div class="col-md-6 img-fluid">
-    <img class="image-fluid" src="assets\home.png"
-        alt=""
-      />
-    </div>
-    </div>
-    </div>
-  </div>
--------------->
+              <form>
+                <h1 class="text-login">Cadastro</h1>
+                <div class="form-group mb-3 sm-2">
+                  <input
+                    id="inputEmail"
+                    type="email"
+                    placeholder="email.usuario@compasso.com.br"
+                    required=""
+                    autofocus=""
+                    class="form-control usuario mb-2 rounded-pill border-0 shadow-sm px-4"
+                    style="color:#E0E0E0; font-size:12px;"
+                  />
+                </div>
+                <div class="form-group mb-3">
+                  <input
+                    id="inputPassword"
+                    type="password"
+                    placeholder="Senha"
+                    required=""
+                    class="form-control senha mb-2 rounded-pill border-0 shadow-sm"
+                    style="color:#E0E0E0; font-size:12px;"
+                  />
+                </div>
+                <div class="form-group mb-3">
+                  <input
+                    id="inputPassword"
+                    type="password"
+                    placeholder="Confimação da Senha"
+                    required=""
+                    class="form-control senha mb-2 rounded-pill border-0 shadow-sm"
+                    style="color:#E0E0E0; font-size:12px;"
+                  />
+                </div>
 
-  <div class="container-fluid no-gutters">
-    <div class="row no-gutters">
-      <div class="col-md-6">
-        <div class="login d-flex align-items-center py-5">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-10 col-xl-7 mx-auto">
-                <h3 class="display-4">Olá,</h3>
-                <p class="text mb-4">
-                  Para continuar navegando de forma segura, efetue o login na rede.
-                </p>
-                <form>
-                  <div class="form-group mb-3">
-                    <input
-                      id="inputEmail"
-                      type="email"
-                      placeholder="Usuário"
-                      required=""
-                      autofocus=""
-                      class="form-control rounded-pill border-0 shadow-sm px-4"
-                    />
-                  </div>
-                  <div class="form-group mb-3">
-                    <input
-                      id="inputPassword"
-                      type="password"
-                      placeholder="Senha"
-                      required=""
-                      class="form-control rounded-pill border-0 shadow-sm px-4 text-primary"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    class="btn btn-primary btn-block mb-2 rounded-pill shadow-sm"
-                  >
-                    Continue
-                  </button>
-                  <div class="text-center d-flex justify-content-between mt-4">
-                    <p class="text">
-                      Não é cadastrado ainda? Cadastre-se
-                      <a href="#" class="font-italic text-muted">
-                        <u>aqui</u></a
-                      >
-                    </p>
-                  </div>
-                </form>
-              </div>
-
+                <button
+                  type="submit"
+                  class="btn continuar btn-danger btn-block mb-2 rounded-pill shadow-sm"
+                >
+                  Continuar
+                </button>
+                <div class="justify-content-between mt-4">
+                  <p class="text">
+                    Voltar para o login? Clique
+                    <a href=" " class="font-italic text-muted"
+                      ><u class="aqui">aqui</u></a
+                    >
+                  </p>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 d-none d-md-flex bg-image no-gutters"></div>
     </div>
+    <div class="col-md-6 d-none d-md-flex bg-image no-gutters"></div>
   </div>
+</div>
 

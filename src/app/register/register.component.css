@@ -1,62 +1,3 @@
-/*
-.column {
-  float: left;
-  width: 25%;
-}
-
-/* Clear floats *
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-/* Responsive layout - makes a two column-layout instead of four columns *
-@media screen and (min-width: 992px) {
-  .column {
-    width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other *
-@media screen and (min-width: 320px), (max-width: 991px) {
-  .column {
-    width: 100%;
-  }
-}
-*/
-
-/*
-* {
-    padding: 0;
-    margin: 0
-}
-
-.container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ccc
-}
-
-
-.image-fluid  {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    overflow: hidden;
-}
-
-@media screen and (min-width: 320px) and (max-width: 991px){
-    hide-on-small-only{
-        display: none;
-    }
-}
-
-
-*/
 @import url(//db.onlinewebfonts.com/c/7200c6dd8ac604abe09f5159e53a40c0?family=Mark+Pro);
 
 .login,
@@ -69,10 +10,121 @@
   background-image: url("../../assets/home.png");
   background-size: cover;
   background-position: center center;
-
 }
 
-.text,
-.display-4{
-  color: #FFFFFF;
+.text {
+  color: #ffffff;
+}
+
+.ola {
+  width: 80%;
+  height: 15%;
+  left: 0%;
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 76px;
+  color: #e0e0e0;
+}
+
+.display-6 {
+  width: 80%;
+  height: 12%;
+  bottom: 250%;
+  margin-bottom: 12%;
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #e0e0e0;
+}
+
+.text-login {
+  height: 38px;
+  margin-bottom: 5%;
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  color: #e0e0e0;
+}
+
+.usuario {
+  box-sizing: border-box;
+    margin-top: 5%;
+  width: 75%;
+  height: 50px;
+  background: #26292c;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  border: 1px solid #FFFFFF;
+}
+.usuario::placeholder,
+.senha::placeholder {
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  color: #e0e0e0;
+}
+
+.senha {
+  box-sizing: border-box;
+  margin-top: 5%;
+  width: 75%;
+  height: 50px;
+  background: #26292c;
+  border: 1px solid #ffffff;
+}
+
+.continuar {
+  margin-top: 15%;
+  width: 75%;
+  height: 55px;
+  background: linear-gradient(90deg, #ff2d04 0%, #c13216 100%);
+  box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.continuar {
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.aqui,
+.text {
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.logo {
+  position: flex;
+  margin-right: 15%;
+  margin-left: 20%;
+  margin-bottom: 20%;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .logo{
+    display: none;
+  }
+}
+
+@media (max-width: 2000px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
 }
