@@ -1,9 +1,75 @@
-@media only screen and (max-width: 600px) {
-   row{
+@import url(//db.onlinewebfonts.com/c/7200c6dd8ac604abe09f5159e53a40c0?family=Mark+Pro);
 
+.login,
+.image {
+  min-height: 100vh;
+  background: #222222;
+  box-shadow: 4px 4px 70px rgba(0, 0, 0, 0.25);
+}
+.bg-image {
+  background-image: url("../../assets/home.png");
+  background-size: cover;
+  background-position: center center;
+}
 
-        margin-top: 5%;
-        margin-left: 1%;
-        margin-right: 1%;
-    }    }
-  
+.text,
+.display-4 {
+  color: #ffffff;
+}
+
+.ola {
+  width: 118px;
+  height: 76px;
+  left: 0%;
+  bottom: 350%;
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 76px;
+  color: #e0e0e0;
+}
+
+.text-information {
+  width: 301px;
+  height: 52px;
+  bottom: 250%;
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #e0e0e0;
+}
+
+.text-login {
+  height: 38px;
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  color: #e0e0e0;
+}
+
+.usuario {
+  box-sizing: border-box;
+  height: 60px;
+  background: #26292c;
+  border: 1px solid #ffffff;
+}
+
+.senha {
+  box-sizing: border-box;
+  height: 60px;
+  background: #26292c;
+  border: 1px solid #ffffff;
+}
+
+.continuar {
+  margin-top: 10%;
+  height: 67px;
+  background: linear-gradient(90deg, #ff2d04 0%, #c13216 100%);
+  box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
+
+}
