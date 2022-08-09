@@ -20,6 +20,10 @@
   width: 80%;
   height: 15%;
   left: 0%;
+  margin-right: 18%;
+  margin-top: 0%;
+  margin-left: 15%;
+  margin-right: 18%;
   font-family: "Mark Pro";
   font-style: normal;
   font-weight: 400;
@@ -28,10 +32,13 @@
   color: #e0e0e0;
 }
 
-.display-6 {
+.display-4 {
   width: 80%;
   height: 12%;
+  margin-left: 15%;
+  margin-right: 18%;
   bottom: 250%;
+  align-items: center;
   margin-bottom: 12%;
   font-family: "Mark Pro";
   font-style: normal;
@@ -43,6 +50,8 @@
 
 .text-login {
   height: 38px;
+  margin-left: 15%;
+  margin-right: 18%;
   margin-bottom: 5%;
   font-family: "Mark Pro";
   font-style: normal;
@@ -54,13 +63,15 @@
 
 .usuario {
   box-sizing: border-box;
-    margin-top: 5%;
+  margin-top: 2%;
   width: 75%;
+  margin-left: 15%;
+  margin-right: 18%;
   height: 50px;
   background: #26292c;
   border: 1px solid #ffffff;
   border-radius: 50px;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
 }
 .usuario::placeholder,
 .senha::placeholder {
@@ -76,6 +87,8 @@
   box-sizing: border-box;
   margin-top: 5%;
   width: 75%;
+  margin-left: 15%;
+  margin-right: 18%;
   height: 50px;
   background: #26292c;
   border: 1px solid #ffffff;
@@ -85,6 +98,8 @@
   margin-top: 15%;
   width: 75%;
   height: 55px;
+  margin-left: 15%;
+  margin-right: 18%;
   background: linear-gradient(90deg, #ff2d04 0%, #c13216 100%);
   box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
 }
@@ -97,10 +112,11 @@
   color: #ffffff;
 }
 
-.aqui,
 .text {
   font-family: "Mark Pro";
   font-style: normal;
+  margin-left: 15%;
+  margin-right: 18%;
   font-weight: 200;
   font-size: 12px;
   color: #ffffff;
@@ -114,13 +130,16 @@
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .logo{
+@media screen and (min-width: 767px) {
+  .logo {
     display: none;
   }
 }
 
-@media (max-width: 2000px) {
+@media only screen and (min-width: 601px) {
+  .logo {
+    display: none;
+  }
 }
 
 @media (max-width: 992px) {
