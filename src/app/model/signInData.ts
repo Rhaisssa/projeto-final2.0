@@ -1,17 +1,18 @@
 export class SignInData {
-    public usuario: string;
-    public senha: string;
+    private email: string;
+    private password: string;
 
-    constructor(usuario: string, senha: string) {
-        this.usuario = usuario;
-        this.senha = senha;
+    constructor(email: string, password: string) {
+      console.log("email dentro da classe signInData: " + email)
+        this.email = email;
+        this.password = password;
     }
 
-    getUsuario(): string {
-        return this.usuario;
+    getLogin(): string {
+        return this.email;
     }
 
-    getSenha(): string {
-        return this.senha;
+    getPassword(): string {
+        return this.password;
     }
 }

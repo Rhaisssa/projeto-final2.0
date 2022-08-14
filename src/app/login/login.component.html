@@ -7,7 +7,7 @@
             <img src="./assets\logoCompasso1.png" class="img-fluid" />
           </span>
           <div class="row">
-            <div class="col-lg-10 col-xl-7 mx-auto">
+            <div class="col-lg-8 mx-auto">
               <h1 class="ola">Olá,</h1>
               <p class="display-6">
                 Para continuar navegando de forma segura, efetue o login na
@@ -16,31 +16,39 @@
 
               <form
                 class="form-signin"
-                (ngSubmit)="onSubmit(signInForm)"
                 #signInForm="ngForm"
+                (ngSubmit)="onSubmit(signInForm)"
+
               >
                 <h1 class="text-login">Login</h1>
                 <div class="form-group mb-4 sm-2">
                   <input
-                    id="inputEmail"
+                    id="inputLogin"
                     type="email"
+                    name="email"
                     placeholder="Usuário"
-                    formControlName="usuario"
-                    required=""
-                    autofocus=""
                     class="form-control usuario mb-4 rounded-pill border-0 shadow-sm px-4"
                     style="color: #e0e0e0; font-size: 12px"
+
+                    autocomplete="on"
+                    ngModel
+                    required
+                    autofocus
                   />
                 </div>
                 <div class="form-group mb-4 sm-2">
                   <input
                     id="inputPassword"
                     type="password"
+                    name="password"
                     placeholder="Senha"
-                    formControlName="senha"
-                    required=""
                     class="form-control senha mb-4 rounded-pill border-0 shadow-sm px-4"
                     style="color: #e0e0e0; font-size: 12px"
+
+                    autocomplete="on"
+                    ngModel
+                    required
+                    autofocus
                   />
                 </div>
 

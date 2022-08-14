@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../Service/authentication.service';
-import { WeatherService } from '../Service/weather.service';
+import { AuthenticationService } from '../Service/guard/services/authentication.service';
+import { WeatherService } from '../Service/guard/services/weather.service';
 
 @Component({
   selector: 'app-home',

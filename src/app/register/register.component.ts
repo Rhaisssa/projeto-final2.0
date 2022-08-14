@@ -8,8 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css'],
 })
 export class registerComponent implements OnInit {
-  loginForm: FormGroup | any;
+
   title = 'material-login';
+  loginForm: FormGroup | any;
+
   constructor(private router: Router) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [
@@ -31,6 +33,6 @@ export class registerComponent implements OnInit {
       return;
     }
     localStorage.setItem('user', this.loginForm.value);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
   }
 }
