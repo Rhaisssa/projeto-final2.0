@@ -1,16 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginData } from '../model/LoginData';
+import { AuthService } from '../Service/guard/services/auth.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class registerComponent implements OnInit {
+export class RegisterComponent implements OnInit {
+
+
   loginForm: FormGroup | any;
   title = 'material-login';
-  constructor(private router: Router) {
+
+
+  constructor(private readonly authService: AuthService,
+    private readonly router: Router) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [
         Validators.required,
@@ -26,11 +33,12 @@ export class registerComponent implements OnInit {
     });
   }
   ngOnInit(): void {}
-  onSubmit() {
-    if (!this.loginForm.valid) {
-      return;
-    }
-    localStorage.setItem('user', this.loginForm.value);
-    this.router.navigate(['/home']);
+
+
+  register(data: LoginData) {
+    this.authService
+      .register(data)
+      .then(() => this.router.navigate(['/home']))
+      .catch((e) => console.log(e.message));
   }
 }

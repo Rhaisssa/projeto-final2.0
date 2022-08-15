@@ -1,42 +1,58 @@
-import { Component, OnInit } from '@angular/core';
-import { SignInData } from '../model/signInData';
-import { NgForm } from '@angular/forms';
-import { AuthenticationService } from '../Service/authentication.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginData } from '../model/LoginData';
+import { AuthService } from '../Service/guard/services/auth.service';
 
 @Component({
-  selector: 'cf-login',
+  selector: 'ng-login-form',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  @Output() formData: EventEmitter<{
+    email: string;
+    password: string;
+  }> = new EventEmitter();
 
-  formValid = false;
-  credentialsInvalid = false;
+  form: FormGroup;
 
-  constructor(public authenticationService: AuthenticationService) {}
+  constructor(
+    private fb: FormBuilder,
+    private readonly authService: AuthService,
+    private readonly router: Router
+  ) {}
 
-  ngOnInit() {}
-
-  onSubmit(signInForm: NgForm) {
-    console.log(signInForm.value);
-
-    if (!signInForm.valid) {
-      this.formValid = true;
-      this.credentialsInvalid = false;
-      return;
-    }
-    this.verifyCredentials(signInForm);
+  ngOnInit(): void {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+    });
   }
 
-  private verifyCredentials(signInForm: NgForm) {
-    const signInData = new SignInData(
-      signInForm.value.usuario,
-      signInForm.value.senha
-    );
+  get email() {
+    return this.form.get('email');
+  }
 
-    if (!this.authenticationService.authenticate(signInData)) {
-      this.formValid = false;
-      this.credentialsInvalid = true;
-    }
+  get password() {
+    return this.form.get('password');
+  }
+
+  onSubmit() {
+    this.formData.emit(this.form.value);
+  }
+
+  login(loginData: LoginData) {
+    this.authService
+      .login(loginData)
+      .then(() => this.router.navigate(['/home']))
+      .catch((e) => console.log(e.message));
+  }
+
+  loginWithGoogle() {
+    this.authService
+      .loginWithGoogle()
+      .then(() => this.router.navigate(['/home']))
+      .catch((e) => console.log(e.message));
   }
 }
