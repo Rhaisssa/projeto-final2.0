@@ -1,4 +1,13 @@
 {
+  "targets": {
+    "projeto-final-2": {
+      "hosting": {
+        "projeto-final-2": [
+          "projeto-final-2"
+        ]
+      }
+    }
+  },
   "projects": {
     "default": "projeto-final-2"
   }

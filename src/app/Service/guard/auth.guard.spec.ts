@@ -1,6 +1,6 @@
-/*import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { AuthGuard } from '@angular/fire/auth-guard';
 
-import { AuthGuard } from '../guard/auth.guard';
 
 describe('AuthGuard', () => {
   let guard: AuthGuard;
@@ -14,4 +14,4 @@ describe('AuthGuard', () => {
     expect(guard).toBeTruthy();
   });
 });
-*/
+

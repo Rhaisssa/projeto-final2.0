@@ -7,9 +7,10 @@ import { from, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  currentUser$ = authState(this.auth);
+  userNow = authState(this.auth);
   email: string;
-  password: string
+  password: string;
+  
 
   constructor(private auth: Auth) {}
 

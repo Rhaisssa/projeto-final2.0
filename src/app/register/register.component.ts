@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, NonNullableFormBuilder, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { HotToastService } from '@ngneat/hot-toast/lib/hot-toast.service';
 import { AuthService } from '../Service/guard/services/auth.service';
 import { UsersService } from '../Service/guard/services/users.service';
-
+import { HotToastService } from '@ngneat/hot-toast';
 
 
 export function passwordsMatchValidator(): ValidatorFn {
@@ -28,57 +27,62 @@ export function passwordsMatchValidator(): ValidatorFn {
 })
 export class RegisterComponent implements OnInit {
 
-
-  signUpForm = new FormGroup(
-    {
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', Validators.required),
-      confirmPassword: new FormControl('', Validators.required),
-    },
-    { validators: passwordsMatchValidator() }
-  );
-
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private toast: HotToastService,
-    private usersService: UsersService
-  ) {}
-
-  ngOnInit(): void {}
-
-  get email() {
-    return this.signUpForm.get('email');
-  }
-
-  get password() {
-    return this.signUpForm.get('password');
-  }
-
-  get confirmPassword() {
-    return this.signUpForm.get('confirmPassword');
-  }
-
-  submit() {
-    if (!this.signUpForm.valid) {
-      return;
+    signUpForm = this.fb.group(
+      {
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', Validators.required],
+        confirmPassword: ['', Validators.required],
+      },
+      { validators: passwordsMatchValidator() }
+    );
+  
+    constructor(
+      private authService: AuthService,
+      private router: Router,
+      private toast: HotToastService,
+      private usersService: UsersService,
+      private fb: NonNullableFormBuilder
+    ) {}
+  
+    ngOnInit(): void {}
+  
+    get email() {
+      return this.signUpForm.get('email');
     }
-
-    const { email, password } = this.signUpForm.value;
-    this.authService
-      .signUp(email, password)
-      .pipe(
-        switchMap(({ user: { uid } }) =>
-          this.usersService.addUser({ uid, email })
-        ),
-        this.toast.observe({
-          success: 'Usuário e senha cadastrado com sucesso!',
-          loading: 'Carregango...',
-          error: ({ message }) => `${message}`,
-        })
-      )
-      .subscribe(() => {
-        this.router.navigate(['/login']);
-      });
+  
+    get password() {
+      return this.signUpForm.get('password');
+    }
+  
+    get confirmPassword() {
+      return this.signUpForm.get('confirmPassword');
+    }
+  
+ 
+    submit() {
+      const { email, password } = this.signUpForm.value;
+  
+      if (!this.signUpForm.valid || !password || !email) {
+        return;
+      }
+  
+      this.authService
+        .signUp(email, password)
+        .pipe(
+          switchMap(({ user: { uid } }) =>
+            this.usersService.addUser({
+              uid, email,
+              password: ''
+            })
+          ),
+          this.toast.observe({
+            success: '',
+            loading: '',
+            error: ({ message }) => `${message}`,
+          })
+        )
+        .subscribe(() => {
+          this.router.navigate(['']);
+        });
+    }
   }
-}
