@@ -14,7 +14,7 @@
                 rede.
               </p>
 
-              <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+              <form (ngSubmit)="submit" [formGroup]="form">
                 <h1 class="text-login">Login</h1>
                 <div class="form-group mb-4 sm-2">
                     <input formControlName="email"
@@ -52,10 +52,7 @@
                 >
                   Continuar
                 </button>
-                <button class="mat-raised-button" (click)="loginWithGoogle()">
-                Entrar com o Google</button>
-                <ng-login-form (formData)="login($event)"></ng-login-form>
-
+<!--------
                 <div
                   class="alert alert-warning"
                   role="alert"
@@ -63,6 +60,7 @@
                 >
                   Ops, usuário ou senha inválidos. Tente novamente!
                 </div>
+ ---->
 
                 <div class="justify-content-between mt-4">
                   <p class="text">

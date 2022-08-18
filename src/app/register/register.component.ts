@@ -1,8 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { LoginData } from '../model/LoginData';
+import { HotToastService } from '@ngneat/hot-toast/lib/hot-toast.service';
 import { AuthService } from '../Service/guard/services/auth.service';
+import { UsersService } from '../Service/guard/services/users.service';
+
+
+
+export function passwordsMatchValidator(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const password = control.get('password')?.value;
+    const confirmPassword = control.get('confirmPassword')?.value;
+
+    if (password && confirmPassword && password !== confirmPassword) {
+      return { passwordsDontMatch: true };
+    } else {
+      return null;
+    }
+  };
+}
 
 @Component({
   selector: 'app-register',
@@ -12,33 +29,56 @@ import { AuthService } from '../Service/guard/services/auth.service';
 export class RegisterComponent implements OnInit {
 
 
-  loginForm: FormGroup | any;
-  title = 'material-login';
+  signUpForm = new FormGroup(
+    {
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', Validators.required),
+      confirmPassword: new FormControl('', Validators.required),
+    },
+    { validators: passwordsMatchValidator() }
+  );
 
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private toast: HotToastService,
+    private usersService: UsersService
+  ) {}
 
-  constructor(private readonly authService: AuthService,
-    private readonly router: Router) {
-    this.loginForm = new FormGroup({
-      email: new FormControl('', [
-        Validators.required,
-        Validators.email,
-        Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,63}$'),
-      ]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.pattern(
-          '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$'
-        ),
-      ]),
-    });
-  }
   ngOnInit(): void {}
 
+  get email() {
+    return this.signUpForm.get('email');
+  }
 
-  register(data: LoginData) {
+  get password() {
+    return this.signUpForm.get('password');
+  }
+
+  get confirmPassword() {
+    return this.signUpForm.get('confirmPassword');
+  }
+
+  submit() {
+    if (!this.signUpForm.valid) {
+      return;
+    }
+
+    const { email, password } = this.signUpForm.value;
     this.authService
-      .register(data)
-      .then(() => this.router.navigate(['/home']))
-      .catch((e) => console.log(e.message));
+      .signUp(email, password)
+      .pipe(
+        switchMap(({ user: { uid } }) =>
+          this.usersService.addUser({ uid, email })
+        ),
+        this.toast.observe({
+          success: 'Usuário e senha cadastrado com sucesso!',
+          loading: 'Carregango...',
+          error: ({ message }) => `${message}`,
+        })
+      )
+      .subscribe(() => {
+        this.router.navigate(['/login']);
+      });
   }
 }
