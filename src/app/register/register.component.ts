@@ -76,8 +76,8 @@ export class RegisterComponent implements OnInit {
             })
           ),
           this.toast.observe({
-            success: '',
-            loading: '',
+            success: '', //pendente
+            loading: '', //pendente
             error: ({ message }) => `${message}`,
           })
         )

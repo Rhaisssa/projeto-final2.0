@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../Service/guard/services/authentication.service';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,10 +12,11 @@ export class HomeComponent implements OnInit {
   weatherNow: any = [];
   currentTime = new Date();
   location: any = [];
+  display: any;
 
   constructor(private authenticationService: AuthenticationService) {
     this.timer(1);
-  }
+   }
 
   ngOnInit(): void { }
 
@@ -28,11 +28,8 @@ export class HomeComponent implements OnInit {
     window.location.href = 'https://www.google.com/';
   }
 
-  display: any;
-  
-
   timer(minute: number) {
-    // let minute = 1;
+    // minute = 1;
     let seconds: number = minute * 60;
     let finishSec: any = "0";
     let startSec: number = 60;
@@ -51,10 +48,11 @@ export class HomeComponent implements OnInit {
       this.display = `${finishSec}`;
 
       if (seconds == 0) {
-        console.log(this.logout);
+        this.logout();
         clearInterval(timer);
       }
     }, 1000);
   }
 }
+
 

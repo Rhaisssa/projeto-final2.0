@@ -112,7 +112,7 @@
   margin-right: 15%;
   margin-left: 20%;
   margin-bottom: 20%;
-  display: none;
+  z-index: 50;
 }
 
 @media screen and (max-width: 768px) {

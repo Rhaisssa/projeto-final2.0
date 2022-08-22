@@ -1,11 +1,9 @@
 <div class="container-fluid no-gutters">
   <div class="row no-gutters">
-    <div class="col-md-6">
-      <div class="login d-flex align-items-center py-5">
+    <div class="col-md-6 no-gutters">
+      <div class="login d-flex align-items-center py-5 no-gutters">
         <div class="container">
-          <span class="logo">
-            <img src="./assets\logoCompasso1.png" class="img-fluid" />
-          </span>
+         
           <div class="row">
             <div class="col-lg-8 mx-auto">
               <h1 class="ola">Olá,</h1>
@@ -16,7 +14,7 @@
 
               <form (ngSubmit)="submit" [formGroup]="form">
                 <h1 class="text-login">Login</h1>
-                <div class="form-group mb-4 sm-2">
+                <div class="form-group mb-4  sm-2">
                     <input formControlName="email"
                       id="inputLogin"
                       type="email"
@@ -66,8 +64,7 @@
                   <p class="text">
                     Não é cadastrado ainda? Cadastre-se
                     <a href="/register" class="font-italic text-muted"
-                      ><u class="aqui">aqui</u></a
-                    >
+                      ><u class="aqui">aqui</u></a>
                   </p>
                 </div>
               </form>
@@ -76,6 +73,10 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6 d-none d-md-flex bg-image no-gutters"></div>
+    <div class="col-md-6 d-none d-md-flex bg-image no-gutters">
+      <div class="col-md-8"> 
+      <img src="./assets\logoCompasso1.png" class="img-fluid" />
+    </div>
+    </div>
   </div>
 </div>

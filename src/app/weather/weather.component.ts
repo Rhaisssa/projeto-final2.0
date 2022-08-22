@@ -9,11 +9,12 @@ import { WeatherService } from '../Service/guard/services/weather.service';
 })
 export class WeatherComponent implements OnInit {
 
-timeline: any = [];
+  timeline: any = [];
   forecasted: any = [];
   weatherNow: any = [];
   currentTime = new Date();
   location: any = [];
+  fullDate: any = [];
 
   constructor(private weatherService: WeatherService) {}
 

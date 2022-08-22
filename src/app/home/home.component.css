@@ -1,76 +1,323 @@
-.bg-image {
-  background-image: url(../../assets/bolaCompasso.png);
-  background-size: cover;
-  background-position: center;
-  margin-top: 50;
-  min-height: 100vh;
+#home {
+  background: #FFFFFF;
+  box-shadow: 4px 4px 70px rgba(0, 0, 0, 0);
+  height: 163px;
+  color: #222222;
+
 }
 
-h1 {
-  font-weight: 700;
-  font-size: 34px;
-  margin-top: 10%;
-  text-align: right;
-  margin-right: 10px;
-  color: #c12d18;
+.logoCompasso {
+  width: 150px;
+  height: 42.74px;
+  margin-left: 40px;
+  margin-top: 25px;
 }
 
-h2 {
-  font-size: 36px;
-  line-height: 30px;
-  margin-top: 30%;
+#dateAndTime {
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 17.03%;
+}
+
+.hour {
   font-weight: 700;
-  text-align: right;
-  line-height: 46px;
-  color: #c12d18;
+  font-size: 144px;
+  height: 126px;
+  width: 100.6%;
+}
+
+.date {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17.75px;
+}
+
+#temperature {
+  margin-top: 25px;
+  margin-right: 41px;
+  width: 6.31%;
+  height: 78px;
+  text-align: center;
+}
+
+
+.temperature {
+  display: flex;
+  margin-top: 12px;
+
+}
+
+
+main {
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+}
+
+.textsAll {
+  margin-top: 102.96px;
+  margin-right: 134px;
 }
 
 p {
-  max-width: 540px;
+  font-family: 'mark-pro-bold';
+  color: #C12D18;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 61.12px;
+}
+
+span {
+  color: #222;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+
+footer {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
+  color: #FFFFFF;
+}
+
+.footerMessage {
+  margin-left: 354px;
+  margin-right: 35px;
+  margin-top: 33px;
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
-  text-align: right;
-  position: relative;
-  margin-left: 350px;
+  width: 28.2%;
+  height: 58px;
+  text-align: end;
+  color: #FFFFFF;
 }
 
-.bg-fluid {
-  width: 35%;
-  height: 95%;
-  left: -10%;
-  top: 20%;
+.bar {
+  height: 61px;
+  margin-top: 17px;
+  width: 1px;
+  background-color: #FFFFFF;
 }
 
-.footer {
-  position: absolute;
-  width: 100%;
-  height: 10vh;
-  top: 100%;
-  background: linear-gradient(90.16deg, #33383d 0%, #1c1d20 100%);
-  border-radius: 0px;
-  color: #ffffff;
-}
-
-.next-button {
-  background-color: #ffffff;
-  position: absolute;
-  right: 8%;
-  font-family: "Mark Pro";
-  font-style: normal;
+.refreshMessage {
+  margin-left: 123px;
+  margin-top: 32px;
+  width: 109px;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 14px;
+  line-height: 17.75px;
+  text-align: end;
+  color: #FFFFFF;
+}
+
+.timer {
+  margin-top: 9px;
+  margin-left: 33px;
+  margin-right: 409px;
   text-align: center;
-  color: #c13216;
+}
+
+
+.number {
+  font-family: 'Mark Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+
+.seconds {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 8.75px;
+  color: #FFFFFF;
+
+}
+
+.hour{
+  color: black;
+}
+
+.date{
+  color: black;
+}
+
+.continue {
+  padding: 36px 18px;
+  background-color: #FFFFFF;
+  color: #C12D18 !important;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
   width: 131px;
   height: 99px;
+  left: 1661px;
+  top: 981px;
 }
 
-.logout-button {
-  color: #ffffff;
-  position: absolute;
-  right: 0%;
-  width: 8%;
-  height: 99%;
-  background: linear-gradient(90.16deg, #33383d 0%, #1c1d20 100%);
+.logout {
+  padding: 42px 23px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15.21px;
+  text-align: center;
+  width: 12px;
+  height: 100px;
+  bottom: -1px;
+  background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
+}
+
+
+@media screen and (min-width: 1400px) and (max-width: 2000px) {
+
+  footer,
+  timer {
+    margin-right: 460px !important;
+  }
+}
+
+
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
+  .footer-msg {
+    margin-top: 16px;
+    margin-left: 60px;
+    width: 40%;
+  }
+
+  .bar {
+    margin-top: 8px;
+    height: 48px;
+  }
+
+  .refresh-message {
+    margin-top: 16px;
+    margin-left: 60px;
+  }
+
+  .timer {
+    margin-left: 40px;
+    margin-right: 220px;
+
+  }
+
+
+  .continue {
+    padding: 24px 16px;
+  }
+
+  .logout {
+    padding: 30px 16px 10px 16px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  #homeComponent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+
+  header {
+    justify-content: space-between;
+    margin: 0;
+    padding-top: 10px;
+  }
+
+  .logo-compasso {
+    max-width: 40%;
+    margin: 0;
+    margin-left: 10px;
+  }
+
+  #dateAndTime {
+    display: none;
+  }
+
+  #temperature {
+    width: 100px;
+    margin: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+
+  main {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .bolaCompasso {
+    display: none;
+  }
+
+  .textsAll {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+
+
+  }
+
+  .footer-msg {
+    width: 96%;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .bar {
+    display: none;
+  }
+
+  .refresh-message {
+    margin: 0;
+    padding-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    width: 300px;
+  }
+
+  .timer {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+
+
+  .continue {
+    padding: 0;
+    width: 100%;
+    height: 10%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .logout {
+    padding: 0;
+    width: 100%;
+    height: 10%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 }

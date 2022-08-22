@@ -10,6 +10,7 @@ export class AuthService {
   userNow = authState(this.auth);
   email: string;
   password: string;
+  isLoggedIn: boolean;
   
 
   constructor(private auth: Auth) {}
